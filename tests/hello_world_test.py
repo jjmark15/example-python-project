@@ -1,7 +1,7 @@
-import unittest
 from cool_package.app import hello_world
+from assertpy import assert_that
 
 
-class TestApp(unittest.TestCase):
-    def test_hello_world_says_hello_world(self):
-        self.assertEqual("Hello World!", hello_world())
+def test_hello_world_says_hello_world():
+    assert_that(hello_world(), "Hello world message is printed").is_equal_to(
+        "Hello World!")
